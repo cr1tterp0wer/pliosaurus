@@ -1,0 +1,21 @@
+<h1>Sign In</h1>
+
+
+<%= render 'shared/errors' %>
+<form action="<%=session_url %>" method="post">
+  <%= render 'shared/auth' %>
+  <input type='hidden' name='_method' value="POST">
+
+
+  <label for="sign-in-form-username">Username:</label>
+  <input type="text"id="sign-in-form-username" name="user[username]" value="">
+
+  <label for="sign-in-form-password">Password:</label>
+  <input id="sign-in-form-password" type="password" name="user[password]" value="">
+  
+
+  <input type="submit" value="Sign In!">
+
+</form>
+
+
