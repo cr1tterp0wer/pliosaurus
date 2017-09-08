@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
                                     session_params[:password])
     unless @user.nil?
       login!(@user) 
-      redirect_to new_user_url
+      redirect_to users_url
     else
       flash[:errors] = ["INVALID CREDENTIALS!"] 
       render :new
