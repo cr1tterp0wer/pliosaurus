@@ -53,7 +53,11 @@ input{
   max-width:200px;
   cursor:pointer;
 }
-
+a{
+  position:relative;
+  display:inline-block;
+  width:auto;
+}
 input[type="password"],
 input[type="text"]{
   position:relative;
@@ -137,7 +141,6 @@ header nav{
       float:right;
       width:auto;
       border-right:1px solid white;
-      padding:25px 0;
       a{
         padding:25px;
       }
@@ -151,7 +154,6 @@ header nav{
 .header-links{
   font-size:$md-font;
   color:#d3d3d3;
-  cursor:pointer;
 
   a{
     cursor:pointer;
@@ -180,3 +182,81 @@ header nav{
     left: 50%;
     transform: translateX(-50%);
 }
+
+
+//
+//
+//
+
+#user-groups-wrap{
+    margin: 0 auto;
+    text-align: center;
+    padding: 50px;
+    h2.group-title > a{
+      text-decoration:none;
+      cursor:pointer;
+      color:red;
+    }
+    h2.group-title.active a,
+    h2.group-title > a:hover{
+      color: #ff00e9;
+    }
+}
+.group-title{
+  display:inline-block;
+}
+#user-groups-list {
+
+ display:none; 
+  li{
+    display:none;
+
+  }
+}
+#map,
+#map-wrap{
+ display:block;
+ max-height:500px;
+ width:100%;
+ max-width:500px;
+ min-width:300px;
+ margin:0 auto;
+ background:#eee;
+ text-align:center;
+}
+#map{
+  min-height:300px;
+  height:100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

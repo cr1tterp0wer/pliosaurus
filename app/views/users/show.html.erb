@@ -2,6 +2,20 @@
 
 <h1>Welcome <%= @user.username %></h1>
 
+
+
+
+
+
+<h2>Groups</h2>
+
+<ul>
+<% @user.groups.each do |group| %>
+ <li><%= group.title %></li>
+<% end %>
+</ul>
+
+
 <div style="height:500px;width:100%;max-width:500px;min-width:300px;margin:0 auto;background:#eee;text-align:center;" id="map"></div>
 
 <%= render 'shared/errors' %>
@@ -14,6 +28,8 @@
 
   <input type="submit" value="Check In!" disabled>
 </form>
+
+
 
 <script>
 var options = {
