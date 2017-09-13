@@ -1,14 +1,7 @@
-
-
 <h1>Welcome <%= @user.username %></h1>
 
 
-
-
-
-
 <h2>Groups</h2>
-
 <ul>
 <% @user.groups.each do |group| %>
  <li><%= group.title %></li>
@@ -16,6 +9,7 @@
 </ul>
 
 
+<h2>Current Location</h2>
 <div style="height:500px;width:100%;max-width:500px;min-width:300px;margin:0 auto;background:#eee;text-align:center;" id="map"></div>
 
 <%= render 'shared/errors' %>
