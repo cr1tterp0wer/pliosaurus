@@ -1,19 +1,20 @@
 <h1>Sign Up</h1>
 
 
+
+<div class="form-wrap">
+
 <%= render 'shared/errors' %>
 <form action="<%= users_url %>" method="post">
   <%= render 'shared/auth' %>
   <input type='hidden' name='_method' value="POST">
 
-  <label for="sign-up-form-username">Username:</label>
-  <input type="text"id="sign-up-form-username" name="user[username]" value="">
-
-  <label for="sign-up-form-password">Password:</label>
-  <input id="sign-up-form-password" type="password" name="user[password]" value="">
+  <input placeholder="Username" type="text"id="sign-up-form-username" name="user[username]" value="">
+  <input placeholder="Password" id="sign-up-form-password" type="password" name="user[password]" value="">
   
   <input type="submit" value="Sign Up!">
 
 </form>
 
 
+</div>

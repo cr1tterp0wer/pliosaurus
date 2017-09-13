@@ -10,6 +10,8 @@ $rg-weight:300;
 $hv-weight:500;
 $xh-weight:700;
 
+$burgundy: #8c1616;
+
 html,
 body{
   height:100%;
@@ -21,7 +23,7 @@ body{
   margin:0 !important;
   font-size:$rg-font;
   font-family:'Arial';
-  
+  color: $burgundy;
   background: #efcdec;
 }
 body{
@@ -42,6 +44,45 @@ div,table,th,tr,td,ul,ol,li,p,span,a,h1,h2,h3,h4,h5,i,button,input{
   transition:ease 0.2s all;
   margin:0;
   padding:0;
+}
+ul,li{display:block;}
+input{
+  display:block;
+  position:relative;
+  width:100%;
+  max-width:200px;
+  cursor:pointer;
+}
+
+input[type="password"],
+input[type="text"]{
+  position:relative;
+  padding: 10px;
+  font-size: 12pt;
+}
+input[type="submit"]{
+  padding: 10px 20px;
+  margin: 20px auto;
+  border-radius: 0;
+  border: none;
+  color: white;
+  background-color: #e666db;
+  font-size: 12pt;
+}
+
+
+form{
+    display:block;
+    position:relative;
+    max-width: 600px;
+    width: 100%;
+    margin: 0 auto;
+    padding:20px;
+
+    input{
+      margin:20px auto;
+    }
+
 }
 
 .cf:after{
@@ -121,7 +162,21 @@ header nav{
   }
 }
 
+// FORMS
+.form-wrap{
+    display:block;
+    position:relative;
+    height:100%;
+    border: 1px solid #d3d3d3;
+    box-shadow: 10px 10px 10px #eee;
+}
 
-
-
-
+// vert-align something
+.vert-aligns{
+    height: auto;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}

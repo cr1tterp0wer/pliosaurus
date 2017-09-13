@@ -1,21 +1,18 @@
 <h1>Sign In</h1>
 
+<div class="form-wrap">
+  <div class="vert-align">
+	<%= render 'shared/errors' %>
+	<form action="<%=session_url %>" method="post">
+	  <%= render 'shared/auth' %>
+	  <input type='hidden' name='_method' value="POST">
 
-<%= render 'shared/errors' %>
-<form action="<%=session_url %>" method="post">
-  <%= render 'shared/auth' %>
-  <input type='hidden' name='_method' value="POST">
+	  <input placeholder="Username" type="text"id="sign-in-form-username" name="user[username]" value="">
+	  <input placeholder="Password" id="sign-in-form-password" type="password" name="user[password]" value="">
+	  
 
+	  <input type="submit" value="Sign In!">
 
-  <label for="sign-in-form-username">Username:</label>
-  <input type="text"id="sign-in-form-username" name="user[username]" value="">
-
-  <label for="sign-in-form-password">Password:</label>
-  <input id="sign-in-form-password" type="password" name="user[password]" value="">
-  
-
-  <input type="submit" value="Sign In!">
-
-</form>
-
-
+	</form>
+</div>
+</div>

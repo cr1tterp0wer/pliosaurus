@@ -1,0 +1,79 @@
+
+
+<h1>Welcome <%= @user.username %></h1>
+
+<div style="height:500px;width:100%;max-width:500px;min-width:300px;margin:0 auto;background:#eee;text-align:center;" id="map"></div>
+
+<%= render 'shared/errors' %>
+<form action="<%= user_location_index_path(@user) %>" method="post">
+  <%= render 'shared/auth' %>
+  <input type="hidden" name="_method" value="POST"> 
+  <input type="hidden" name="user[user_id]" value="<%= @user.id %>">
+  <input id="lat"  type="hidden" name="user[latitude]" value="">
+  <input id="long" type="hidden" name="user[longitude]" value="">
+
+  <input type="submit" value="Check In!" disabled>
+</form>
+
+<script>
+var options = {
+  enableHighAccuracy: true,
+  timeout: 5000,
+  maximumAge: 0
+};
+
+let loc = {};
+
+function success(pos) {
+  var crd = pos.coords;
+  loc.latitude  = crd.latitude;
+  loc.longitude = crd.longitude;
+  initMap(loc);
+
+  //enable the button when done
+  $('input').prop('disabled',false);
+};
+
+function error(err) {
+  console.warn(`ERROR(${err.code}): ${err.message}`);
+};
+
+function initMap(loc) {
+  var pos = {lat: loc.latitude, lng: loc.longitude};
+  var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 10,
+      center: pos
+  });
+  var marker = new google.maps.Marker({
+    position: pos,
+    map: map
+  });
+}
+function initGoogleMaps(){
+  navigator.geolocation.getCurrentPosition(success, error, options);
+}
+function bindSubmitCheckIn(){
+  var readyToSubmit=false;
+  $('form').on('submit',function(e){
+      if(readyToSubmit){
+         readyToSubmit = false;
+         return;
+      }
+
+
+     e.preventDefault();
+     let longitude = loc.longitude;
+     let latitude  = loc.latitude;
+     $("#lat").val(latitude);
+     $("#long").val(longitude);
+     readyToSubmit = true;
+     $('form').submit();
+  });
+
+}
+bindSubmitCheckIn();
+</script>
+
+<script async defer
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCaNtdxZdFwl2-vMpkDk1BK0ofNmLa82aY&callback=initGoogleMaps">
+</script>

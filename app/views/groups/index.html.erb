@@ -1,0 +1,17 @@
+<h1>Available Groups</h1>
+ <ul>
+  <% @groups.each do |group| %>
+    <li> <%= group.title %>  <%= link_to "remove", group_url(group), method: :DELETE %> 
+    <% unless current_user.groups.include?( Group.find(group.id) )%>
+     | <%= link_to "join", groupusers_url(group_id: group.id, user_id: current_user.id) ,method: :POST %>
+     <% else %>
+     | <%=  link_to "leave", groupuser_url(group), method: :DELETE %>
+    <% end %>
+    </li>
+  <% end %>
+ </ul>
+
+
+<%= link_to "Add Group", new_group_url %>
+
+

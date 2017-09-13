@@ -26,6 +26,14 @@ class User < ApplicationRecord
     foreign_key: :user_id,
     class_name: :Session
 
+  has_many :user_groups,
+    primary_key: :id,
+    foreign_key: :user_id,
+    class_name: :GroupUserJoin
+  has_many :groups,
+    through: :user_groups,
+    source: :group
+
   #instance methods
   def password=(pass)
     @password = pass

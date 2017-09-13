@@ -26,12 +26,18 @@ gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
- gem 'bcrypt', '~> 3.1.7'
+ #gem 'bcrypt', '~> 3.1.11', platforms: :ruby
+#gem 'bcrypt', '~> 3.1.11', platforms: [:ruby, :x64_mingw, :mingw]
+gem 'bcrypt', git: 'https://github.com/codahale/bcrypt-ruby.git',:require => 'bcrypt'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+gem 'jquery-rails', '>=2.1.4'
+gem 'jquery-ui-rails','>=4.2.1'
+
 group :development, :test do
+  gem 'wdm', '>= 0.1.0' if Gem.win_platform?
   gem 'annotate'
   gem 'pry-rails'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

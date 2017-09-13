@@ -1,0 +1,19 @@
+<h1>Create Group</h1>
+
+
+
+<div class="form-wrap">
+
+<%= render 'shared/errors' %>
+<form action="<%= groups_url %>" method="post">
+  <%= render 'shared/auth' %>
+  <input type='hidden' name='_method' value="POST">
+
+  <input placeholder="Title" type="text"id="sign-up-form-username" name="group[title]" value="">
+  
+  <input type="submit" value="Create Group!">
+
+</form>
+
+
+</div>
