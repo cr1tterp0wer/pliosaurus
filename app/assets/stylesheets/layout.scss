@@ -14,7 +14,7 @@ $burgundy: #8c1616;
 
 html,
 body{
-  height:100%;
+  min-height:100%;
   width:100%;
   display:block;
   box-sizing:border-box;
@@ -192,6 +192,12 @@ header nav{
     margin: 0 auto;
     text-align: center;
     padding: 50px;
+    .group-container{
+      display:inline-block;
+      margin:0 20px;
+    }
+
+
     h2.group-title > a{
       text-decoration:none;
       cursor:pointer;

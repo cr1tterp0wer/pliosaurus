@@ -18,6 +18,7 @@
  
  <div id="user-groups-wrap">
   <% current_user.groups.each do |group| %>
+    <div class="group-container">
     <h2 class="group-title"><a href="#"><%=group.title %></a></h2>
     <ul id="user-groups-list">
       <% group.users.each do |u| %>
@@ -26,6 +27,7 @@
         <%end%>
       <% end %>
     </ul>
+    </div>
   <% end %>
  </div>
 
