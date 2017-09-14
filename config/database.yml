@@ -30,8 +30,8 @@ development:
   pool: 5
   host: "localhost"
   port: 5432
-  username: 
-  password:
+  username: "postgres" 
+  password: "password"
 
 test: &TEST
   adapter: postgresql
@@ -40,8 +40,8 @@ test: &TEST
   pool: 5
   host: "localhost"
   port: 5432
-  username: 
-  password:
+  username: "postgres"
+  password: "password"
 
 production:
   adapter: postgresql
@@ -50,8 +50,8 @@ production:
   pool: 5
   host: "localhost"
   port: 5432
-  username: 
-  password:
+  username: "postgres"
+  password: "password"
   host: localhost
 
 cucumber:
